@@ -212,6 +212,7 @@ p {
 }
 .hero-social {
     position: absolute;
+    overflow: visible;
     bottom: 40px;
     right: 40px;
     display: flex;
@@ -344,7 +345,7 @@ p {
 
 /* SERVICES SECTION */
 .services-section {
-    padding: 100px 0;
+    padding: 70px 0;
     background: linear-gradient(
         to bottom right,
         rgba(46, 124, 144, 0.9),
