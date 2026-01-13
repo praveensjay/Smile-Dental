@@ -4,10 +4,11 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body {
-    line-height: 1.6;
-    color: #333;
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
+
 section {
     padding: 80px 10%;
 }
@@ -241,6 +242,8 @@ p {
     border-top-right-radius: 35px;
     z-index: 2;
 }
+
+
 
 
 
@@ -737,98 +740,421 @@ p {
 }
 
 
-/*********footer
-/* FOOTER SECTION */
+/**************************footer
+/* FOOTER BASE */
 .footer-section {
-    background: #1D2635;
-    color: #fff;
-    font-size: 16px;
+  background: #1D2635;
+  color: #ffffff;
 }
-/* LOGO CIRCLE */
-.logo-circle {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #ffffff;
+
+/* Headings */
+.footer-heading {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Brand description */
+.footer-desc {
+  color: rgba(184, 184, 184, 0.85);
+  font-size: 14px;
+  margin-top: 8px;
+  max-width: 260px;
+}
+
+/* Logo circle */
+.footer-logo-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.footer-logo-circle img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain; /* ✅ fixed inside circle */
+}
+
+/* Social circles */
+.footer-social-circle {
+  width: 36px;
+  height: 36px;
+  background: rgba(184, 184, 184, 0.85);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.footer-social-circle:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+  background-color: white;
+}
+
+/* Links */
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(184, 184, 184, 0.85);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+/* Contact section */
+.footer-text {
+  color: rgba(184, 184, 184, 0.85);
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-branch-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+}
+
+/* Map link rectangle (209x97) */
+.footer-map-link {
+  width: 209px;
+  height: 97px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+  transition: 0.25s ease;
+}
+
+.footer-map-link:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+/* Email link */
+.footer-email {
+  color:  rgba(184, 184, 184, 0.85);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.footer-email:hover{
+    color: white;
+}
+/* Vertical divider between section 3 & 4 */
+.footer-hours-col {
+  position: relative;
+  padding-left: 6%;
+}
+
+@media (min-width: 992px) {
+  .footer-hours-col::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255,255,255,0.25); /* ash vertical line */
+  }
+}
+
+/* Open hours grid-aligned */
+.footer-hours p {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+
+.footer-hours .day {
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.footer-hours .time {
+  line-height: 1.4;
+}
+
+/* Bottom divider line */
+.footer-divider {
+  border-color: rgba(255,255,255,0.25);
+}
+
+/* Rights */
+.footer-rights {
+  color: rgba(255,255,255,0.75);
+}
+
+
+
+/********************responsive
+/* iPhone 14 Pro Max + general mobile */
+@media (max-width: 991.98px) {
+
+  /* Navbar row layout */
+  #mainNavbar {
+    background: transparent;          /* keep your hero look */
+  }
+
+  #mainNavbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Hamburger (toggler) left + blue icon */
+  #mainNavbar .navbar-toggler {
+    order: 1;
+    margin: 0;
+    padding: 6px 8px;
+    border: 0;
+    box-shadow: none;
+  }
+
+  /* Make the bootstrap toggler icon blue */
+  #mainNavbar .navbar-toggler-icon {
+    background-image: none;           /* remove default white icon */
+    width: 26px;
+    height: 18px;
+    position: relative;
+    display: inline-block;
+  }
+
+  #mainNavbar .navbar-toggler-icon::before,
+  #mainNavbar .navbar-toggler-icon::after,
+  #mainNavbar .navbar-toggler-icon span {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #2E7C90;              /* ✅ blue */
+    border-radius: 2px;
+  }
+
+  #mainNavbar .navbar-toggler-icon::before { top: 0; }
+  #mainNavbar .navbar-toggler-icon::after  { bottom: 0; }
+  #mainNavbar .navbar-toggler-icon span    { top: 50%; transform: translateY(-50%); }
+
+  /* We need the middle bar: add a span via CSS trick */
+  #mainNavbar .navbar-toggler .navbar-toggler-icon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Logo next to hamburger */
+  #mainNavbar .navbar-brand {
+    order: 2;
+    margin: 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  #mainNavbar .navbar-brand img {
+    height: 34px;
+  }
+
+  /* Call Us button right */
+  #mainNavbar .call-btn {
+    order: 3;
+    margin-left: auto;
+    padding: 5px 40px;   
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    flex-shrink: 0;
+    font-size: 14px;      
+    border-radius: 24px;
+    white-space: nowrap;
+  }
+
+  /* Light white separator line below the row */
+  #mainNavbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.35); /* ✅ light white line */
+  }
+
+  /* Dropdown menu area */
+  #mainNavbar .navbar-collapse {
+    order: 4;
+    width: 100%;
+    flex-basis: 100%;
+    margin-top: 12px;
+  }
+  #mainNavbar.menu-open {
+  background: #ffffff !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+#mainNavbar.menu-open .nav-link {
+  color: #2E7C90 !important;
+  font-size: large;
+}
+#mainNavbar.menu-open .call-btn {
+  color: #2E7C90 !important;
+  border-color: #2E7C90 !important;
 }
 
-.logo-circle img {
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
+/* Optional: separator line when menu open (a bit darker on white bg) */
+#mainNavbar.menu-open::after {
+  background: rgba(0,0,0,0.08) !important;
 }
 
-/* SOCIAL ICONS */
-.social-circle {
+.hero-title-wrapper {
+    z-index: 5;
+    margin-bottom: -40px;
+}
+.hero-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10%;
+    z-index: 2;
+    position: relative;
+    text-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+.hero-girl {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 58vh;
+    z-index: 3;
+    pointer-events: none;
+}
+.hero-content {
+    min-height: 100vh;      /* fallback */
+    min-height: 100dvh;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.hero-image-wrapper {
+    z-index: 6;
+}
+.hero-buttons {
+    position: absolute;
+    z-index: 4;
+    top: 90%;
+  
+}
+.about-btn {
+    display: none;
+}
+.book-btn {
+    background: #ffffff;
+    color: #2B768B;
+    padding: 6px 20px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    max-width: 100%; 
+    
+}
+.book-btn:hover {
+    transform: translateY(-2px);
+}
+.hero-bottom-left {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+}
+.small-description {
+    max-width: 500px;
+    font-size: 14px;
+    color: rgb(240, 240, 240);
+    text-align: center;
+    box-shadow: #000;
+}
+.info-boxes {
+    display: flex;
+    gap: 20px;
+}
+.info-box {
+    background: rgba(255, 255, 255, 0.1); /* added opacity */
+    color: #333;
+    padding: 15px 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(82, 82, 82, 0.1);
+    text-align: center; 
+}
+.info-boxes h6{
+    color: rgb(240, 240, 240);
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    font-size: 28px;
+}
+.info-boxes small{
+    color: rgb(240, 240, 240);
+    font-weight: 400;
+    font-size: 15px;
+}
+.hero-social {
+    position: absolute;
+    overflow: visible;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    gap: 12px;
+    z-index: 8;
+}
+/*.hero-social a {
     width: 45px;
     height: 45px;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.37);
     border-radius: 50%;
-    background: #ebebeb;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #000;
-    font-size: 20px;
-    transition: 0.3s ease;
+}*/
+.hero-ink-box {
+    position: absolute;
+    bottom: 0;
+    left: 53%;
+    transform: translateX(-30%);
+    width: 250px;
+    height: 40vh;
+    background: rgba(255, 255, 255, 0.15);
+    border-top-right-radius: 35px;
+    z-index: 2;
 }
 
-.social-circle:hover {
-    transform: scale(1.1);
-}
 
-/* FOOTER LINKS */
-.footer-links li {
-    margin-bottom: 10px;
-}
 
-.footer-links a {
-    color: #c0c0c0;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-links a:hover {
-    color: #2B768B;
-}
-
-/* MAP LINKS */
-.footer-map {
-    display: inline-block;
-    width: 209px;
-    height: 90px;
-    background: #0E78A4;
-    color: #fff;
-    border-radius: 12px;
-    text-align: center;
-    line-height: 90px;
-    text-decoration: none;
-    margin-top: 2px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.footer-map:hover {
-    background: #2B768B;
-}
-
-/* SEPARATOR LINE */
-.footer-separator {
-    border-color: #6c6c6c;
-}
-
-/* OPEN HOURS */
-.footer-hours h6 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.footer-hours p {
-    font-size: 14px;
-    margin-bottom: 3px;
 }

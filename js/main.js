@@ -33,3 +33,43 @@ branchItems.forEach(item => {
         document.getElementById(item.dataset.branch).classList.add('active');
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.getElementById("mainNavbar");
+  const navCollapseEl = document.getElementById("mainNav");
+
+  if (!navbar || !navCollapseEl) return;
+
+  // Bootstrap Collapse instance (create if not exists)
+  const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapseEl, { toggle: false });
+
+  // When menu opens -> make navbar white
+  navCollapseEl.addEventListener("show.bs.collapse", () => {
+    navbar.classList.add("menu-open");
+  });
+
+  // When menu closes -> remove white background (unless scrolled state exists)
+  navCollapseEl.addEventListener("hidden.bs.collapse", () => {
+    navbar.classList.remove("menu-open");
+  });
+
+  // Close menu when clicking/tapping outside the navbar
+  document.addEventListener("click", (e) => {
+    const isOpen = navCollapseEl.classList.contains("show");
+    if (!isOpen) return;
+
+    const clickedInsideNavbar = navbar.contains(e.target);
+    if (!clickedInsideNavbar) {
+      bsCollapse.hide();
+    }
+  });
+
+  // Optional: close menu after clicking a nav link (nice on mobile)
+  navbar.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      if (navCollapseEl.classList.contains("show")) bsCollapse.hide();
+    });
+  });
+});
+
