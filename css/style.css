@@ -1031,11 +1031,11 @@ p {
     margin-bottom: -40px;
 }
 .hero-title {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 600;
     color: #ffffff;
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 12%;
     z-index: 2;
     position: relative;
     text-shadow: 0 12px 30px rgba(0,0,0,0.45);
@@ -1045,7 +1045,7 @@ p {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    max-height: 58vh;
+    max-height: 60vh;
     z-index: 3;
     pointer-events: none;
 }
@@ -1091,17 +1091,17 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 8;
+    max-width: 90%;
 }
 .small-description {
-    max-width: 500px;
-    font-size: 14px;
+    font-size: 16px;
     color: rgb(240, 240, 240);
     text-align: center;
     box-shadow: #000;
 }
 .info-boxes {
     display: flex;
-    gap: 20px;
+    gap: 16px;
 }
 .info-box {
     background: rgba(255, 255, 255, 0.1); /* added opacity */
@@ -1146,14 +1146,110 @@ p {
 .hero-ink-box {
     position: absolute;
     bottom: 0;
-    left: 53%;
+    left: 60%;
     transform: translateX(-30%);
-    width: 250px;
+    width:200px;
     height: 40vh;
     background: rgba(255, 255, 255, 0.15);
     border-top-right-radius: 35px;
     z-index: 2;
 }
+
+/*********************** aboutt uss
+
+/* ABOUT SECTION */
+.about-section {
+    padding: 60px 0;
+    max-width: 90%;
+     margin: 0 auto;  
+}
+
+/* LEFT SIDE IMAGES *//* LEFT SIDE IMAGES */
+.about-img {
+   left: 17%;
+}
+
+/* TOP IMAGE */
+.about-img-top {
+    width: 150px;
+    height: 90px;
+    border-radius: 60px 10px 60px 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* BOTTOM IMAGE */
+.about-img-bottom {
+    width: 240px;
+    margin-top: 20px;
+    border-radius: 10px 90px 10px 60px;
+    height: 120px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ALIGN LEFT SIDES */
+.about-img-top,
+.about-img-bottom {
+    margin-left: 0;
+}
+
+/* GREEN DECORATIVE CIRCLE */
+.about-circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #2B768B;
+    border-radius: 50%;
+    top: 60px;
+    right: 120px;
+    z-index: 1;
+}
+
+/* RIGHT SIDE TEXT */
+.about-small-title {
+    color: #2B768B;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+.about-main-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 16px;
+    color: #666;
+    max-width: 100%;
+}
+
+/* INFO BOXES */
+.about-box {
+    background:rgba(46, 124, 144, 0.9);
+    color: #333;
+    padding: 15px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(82, 82, 82, 0.1);
+    text-align: center; 
+    height: 100px;
+}
+
+.about-box h5 {
+    color: rgb(231, 231, 231);
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+    font-size: 32px;
+}
+
+.about-box p {
+    color: rgb(231, 231, 231);
+    font-weight: 500;
+    font-size: 14px;
+}
+
 
 
 
