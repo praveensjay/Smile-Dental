@@ -257,10 +257,12 @@ p {
 
 /* LEFT SIDE IMAGES */
 .about-img {
-    display: block;
+    display: flex;
     object-fit: cover;
     position: relative;
     z-index: 2;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 /* TOP IMAGE */
@@ -1096,14 +1098,14 @@ p {
 }
 .small-description {
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     color: rgb(240, 240, 240);
     text-align: center;
     box-shadow: #000;
 }
 .info-boxes {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;   /* ✅ centers boxes horizontally */
     align-items: center; 
 }
@@ -1153,10 +1155,10 @@ p {
     bottom: 0;
     left: 60%;
     transform: translateX(-30%);
-    width:200px;
-    height: 40vh;
+    width:160px;
+    height: 38vh;
     background: rgba(255, 255, 255, 0.15);
-    border-top-right-radius: 35px;
+    border-top-right-radius: 25px;
     z-index: 2;
 }
 
@@ -1166,12 +1168,31 @@ p {
 .about-section {
     padding: 60px 0;
     max-width: 90%;
-     margin: 0 auto;  
+    margin: 0 auto;  
 }
 
+.about-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: fit-content;         /* shrink-wrap to content */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+ .about-left .about-img {
+    align-self: flex-start;     /* keep left alignment */
+  }
 /* LEFT SIDE IMAGES *//* LEFT SIDE IMAGES */
 .about-img {
-   left: 17%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   
+    width: fit-content;       
+    justify-content: center;     
+    position: relative;
+    
 }
 
 /* TOP IMAGE */
@@ -1192,9 +1213,10 @@ p {
 }
 
 /* ALIGN LEFT SIDES */
-.about-img-top,
-.about-img-bottom {
-    margin-left: 0;
+.about-img-top, .about-img-bottom {
+    position: relative;
+    z-index: 2;
+    align-items: left;
 }
 
 /* GREEN DECORATIVE CIRCLE */
@@ -1204,8 +1226,8 @@ p {
     height: 40px;
     background: #2B768B;
     border-radius: 50%;
-    top: 60px;
-    right: 120px;
+    top: 50px;
+    right: 50px;
     z-index: 1;
 }
 
@@ -1231,11 +1253,17 @@ p {
 }
 
 /* INFO BOXES */
+ .about-boxes {
+    flex-wrap: nowrap;
+    max-width: 35%;
+    
+  }
+   
 .about-box {
     background:rgba(46, 124, 144, 0.9);
     color: #333;
-    padding: 15px 40px;
-    border-radius: 12px;
+    padding: 15px 15px;
+    border-radius:12px;
     box-shadow: 0 10px 20px rgba(82, 82, 82, 0.1);
     text-align: center; 
     height: 100px;
@@ -1246,13 +1274,14 @@ p {
     font-weight: 500;
     margin: 0;
     text-align: center;
-    font-size: 32px;
+    font-size: 26px;
 }
 
 .about-box p {
     color: rgb(231, 231, 231);
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
+    text-align: center;
 }
 
 
